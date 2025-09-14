@@ -34,7 +34,7 @@
 - Atajos y botones de acceso rápido.
 
 
-## Requisitos Duncionales que no Generan Valor a la Organización
+## Requisitos Funcionales que no Generan Valor a la Organización
 
 - No se evidenció ningún requisito que no genere valor.
 
