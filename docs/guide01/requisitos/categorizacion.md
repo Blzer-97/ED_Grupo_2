@@ -1,6 +1,6 @@
 # Categorización de requisitos 
 
-## Requisitos funcionales mandatorios
+## Requisitos Funcionales Mandatorios
 
 ### Gestión de productos
 - Registrar nuevos productos con campos: nombre, SKU, categoría, stock, precio de costo y precio de venta.
@@ -21,7 +21,8 @@
 - Posibilidad de editar o eliminar servicios registrados.
 ### Control de usuario único (uso personal)
 
-## Requisitos funcionales de mejora
+## Requisitos Funcionales de Mejora
+
 ### Búsqueda y filtros de productos
 ### Reportes y estadísticas
 - Generación de reportes de ventas por período.
@@ -33,7 +34,8 @@
 - Atajos y botones de acceso rápido.
 
 
-## Requisitos funcionales que no generan valor a la organización
-- No se evidenció ningún requisito que no genera valor
+## Requisitos Duncionales que no Generan Valor a la Organización
+
+- No se evidenció ningún requisito que no genere valor.
 
 
