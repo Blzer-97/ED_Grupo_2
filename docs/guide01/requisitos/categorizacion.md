@@ -1,19 +1,39 @@
-# Categorización lógica de requisitos (Organización de los requisitos de usuario)
+# Categorización de requisitos 
 
-## Gestión de productos
-- Registrar nuevos productos con campos: nombre, descripción, SKU, categoría, proveedor, stock inicial, precio de costo y precio de venta.
+## Requisitos funcionales mandatorios
+
+### Gestión de productos
+- Registrar nuevos productos con campos: nombre, SKU, categoría, stock, precio de costo y precio de venta.
 - Editar y eliminar productos existentes.
 - Consultar ficha detallada de cada producto.
+### Gestión de inventario
+- Registro de entradas (compras o ingresos de productos) y salidas (ventas o retiros de stock).
+- Actualización automática del stock al registrar entradas o salidas.
+- Historial de movimientos de inventario por producto.
+### Gestión de ventas
+- Registrar ventas con detalle de productos vendidos, cantidad, precio unitario, subtotal, IGV, descuentos y total.
+- Cálculo automático del subtotal y del total.
+- Generación de boletas en formato digital (PDF o impresión).
+### Cálculo de rentabilidad
+- Cálculo automático del margen de ganancia en cada venta.
+### Gestión de servicios
+- Lista de servicios con precio por servicio.
+- Posibilidad de editar o eliminar servicios registrados.
+### Control de usuario único (uso personal)
 
 ## Requisitos funcionales de mejora
-Representan una mejora a las funcionalidades mandatorias del software.
+### Búsqueda y filtros de productos
+### Reportes y estadísticas
+- Generación de reportes de ventas por período.
+### Soporte de impuestos configurables
+- Configurar porcentaje de IGV y moneda de operación.
+- Conversión automática de moneda si se desea.
+### Interfaz de usuario mejorada
+- Diseño con navegación simple.
+- Atajos y botones de acceso rápido.
+
 
 ## Requisitos funcionales que no generan valor a la organización
-Representan los requisitos que no se corresponden con ningún objetivo del software menos de la organización.
+- No se evidenció ningún requisito que no genera valor
 
-# Tips para mayor claridad:
-## Propósito
-Categorizar los requisitos de usuario.
 
-## Qué se espera
-Tener los requisitos de usuario debidamente categorizados.
