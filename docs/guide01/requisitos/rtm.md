@@ -1,26 +1,81 @@
 # Especificación de requisitos de software
 
 ## Requisitos funcionales
-Los requisitos funcionales se expresan en lenguaje técnico a partir de los requisitos funcionales mandatorios que se han identificado en la categorización de requisitos de usuario.
-Ello implica el desarrollo de los siguientes puntos:
-- Puede escribirse en pseudocódigo incluyendo anotaciones de fórmulas de cálculo matemático según sea el caso. Este escenario es factible cuando el requisito ha sido claramente definido y validado
-  por el usuario/cliente.
-- Formato de interfaz de usuario y GUI como parte de la capa de presentación (Front End) del aplicativo de software: Incluye la interfaz de usuario para el sistema como propuesta inicial a las necesidades
-  del cliente. Deberá incluirlo en el Anexo “A”. Este escenario es factible cuando los requisitos no se encuentran definidos desde la perspectiva del usuario o existe dificultad para su obtención y entendimiento.
-  Puede utilizar cualquier herramienta mockup libre para diseñar sus interfaces: https://careerfoundry.com/en/blog/ux-design/free-wireframing-tools/
-  
+### RF001 - Gestión de Productos
+#### 1. Función registrarProducto:
+- Entrada de datos: nombre, SKU (clave única), categoría, stock inicial, precio costo, precio venta.
+- Validación de campos obligatorios y esquema (SKU único, precios positivos).
+#### 2. Función modificarProducto:
+- Modificación de cualquier campo editable (nombre, categoría, precios).
+- Control para evitar incosistencias en ventas como cotización.
+#### 3. Función eliminarProducto:
+- Eliminación lógica (desactivación) permitida solo si no existen ventas o movimientos de inventario relacionados por confirmar.
+- Confirmar nuevamente al usuario antes de ejecutar la eliminación.
+#### 4. Función consultarProducto:
+- Visualización de información del producto, su stock actual y reporte del producto en ventas.
+- Soporte para paginación y ordenamiento por campos como nombre o categoría.
+### RF002 - Gestión de Inventario
+#### 1. Función registrarEntrada:
+- Registrar una entrada de inventario (compra u otro tipo de ingreso).
+- Actualiza el stock sumando la cantidad.
+#### 2. Función registrarSalida:
+- Registrar una salida de inventario (venta o retiro).
+- Validar que stock actual sea suficiente para la salida.
+- Restar cantidad al stock.
+#### 3. Función actualizarStock:
+- Función interna par ajustar stock según operacion (entrada o salida).
+#### 4. Función consultarHistorial:
+- Mostrar movimientos de inventario guardados para un producto, con filtros opcionales.
+### RF003 - Gestión de Ventas
+#### 1. Función registrarVenta:
+- Registrar venta con lista de productos, cantidades, precio unitario, etc.
+- Para producto: Editar el precio de venta unitario predeterminado de las líneas de orden de venta.
+- Para servicio: Un campo de texto por línea de orden donde se escriben manualmente anotaciones sobre el servicio realizado.
+- Calcular subtotal, aplicar descuentos/impuestos y calcular total, considerar el IGV configurable.
+- Preguntar al usuario sobre confirmación para convertir cotización a orden de venta.
+- Posibilidad de cancelar (desactivar) una venta, para que no se tome en cuenta en los reportes.
+#### 2. Función generarBoleta:
+- Crear documento PDF con los datos completos de la venta (productos, cantidad, subtotal, IGV, total).
+- Opciones para guardar boleta en la computadora.
+#### 3. Función verRentabilidad:
+- Calcular margen de ganancia para cada producto vendido: (precioVenta - precioCosto) * cantidad.
+- Sumar margen total de la venta para análisis.
+### RF004 - Gestión de Servicios
+#### 1. Función registrarServicio:
+- Añadir nuevo servicio al catálogo local (nombre, precio predeterminado).
+#### 2. Función modificarServicio:
+- Modificar el nombre y precio predeterminado de un servicio existente.
+#### 3. Función eliminarServicio:
+- Borrar o desactivar un servicio existente.
+#### 4. Función consultarServicio:
+- Listar todos los servicios activos con precios.
+### RF004 - Creación de Reportes
+#### 1. Función generarReporteVentasPeriodo:
+- Generar reporte de ventas en un rango de fechas especificado por el usuario.
+- Permitir filtros por producto, categoría o servicio.
+#### 2. Función obtenerProductoMasVendido:
+- Identificar el producto con mayor cantidad vendida en un período determinado.
+- Calcular y mostrar cantidad total vendida y porcentaje respecto al total de ventas.
+- Permitir comparación entre varios productos relevantes.
+#### 3. Función compararGananciasPorMes:
+- Extraer ganancias netas (ingresos menos costos) de dos meses y años seleccionados.
+- Mostrar tabla comparativa con diferencias absolutas y porcentuales de ganancias.
+- Visualizar evolución y tendencias entre los períodos.
+#### 4. Función generarReporteInventario:
+- Listar movimientos de inventario (entradas y salidas) filtrados por fecha, producto o tipo de movimiento.
+- Resaltar productos con stock bajo o movimientos inusuales para atención inmediata.
+#### 5. Función visualizarGraficosReporte:
+Generar gráficos de barras, líneas o pastel para análisis visual.
+Permitir interacción como selección de meses o productos para el análisis dinámico.
 ## Requisitos no funcionales
-- Portabilidad del software
-- Facilidad de mantenimiento: Que implica el grado de conocimiento de la herramienta de desarrollo del software, así como de la disponibilidad de personal técnico apropiado entre otros.
-- Usabilidad del software
-- Velocidad de procesamiento de datos
-- Restricciones técnicas del software: Por ejemplo, restricciones de diseño debido al sistema operativo utilizado, el entorno de la plataforma, problemas de compatibilidad con alguna aplicación interna o
-  externa a la organización, estándar para alguna aplicación determinada, entre otros.
-
-
-# Tips para mayor claridad
-## Propósito
-Definir los requisitos técnicos mínimos (RTM) del proyecto de software.
-
-## Qué se espera
-- Que sea el imput para el desglose de tareas de la planificación del proyecto, para su posterior diseño e implementación.
+### Portabilidad del software:
+El sistema debe ser compatible con Windows para permitir su ejecución local en PCs diversas, sin dependencias externas difíciles de manejar.
+### Facilidad de mantenimiento:
+El software debe estar desarrollado con un código claro y modular, principalmente se busca comentarios para que sea escalable a futuro.
+### Usabilidad del software:
+La interfaz de usuario debe ser intuitiva y simple, requisito mencionado por el cliente, debe contar con flujos de trabajo simples y consistentes.
+### Velocidad de procesamiento de datos:
+El sistema debe procesar y actualizar la información en tiempos mínimos aceptables, por la naturaleza de un único taller mecánico, no existen cantidades masivas de datos.
+### Restricciones técnicas del software:
+- El software debe funcionar completamente en almacenamiento local, sin depender de Internet.
+- No deben utilizarse tecnologías o librerías no compatibles con las plataformas objetivo.
