@@ -40,6 +40,7 @@ De esta forma, se garantiza que el software responda a las necesidades reales de
 ## Técnicas de recopilación de requisitos
 Descritas en el Anexo A - “Técnicas de obtención de requisitos de software” de la presente guía.
 
-  - Notas de texto y mensajes de control
+  - Notas de texto y mensajes.
+  - Catálogos y listado de requisitos.
 
 
