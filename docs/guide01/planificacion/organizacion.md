@@ -1,17 +1,20 @@
 ## Organización del Proyecto
-Se define el ED, sus miembros y los roles en el equipo.
+### ED02 Integrantes:
+- Vincula Nuñovero, Matias Sebastian
+- Cansaya Cutipa, Frank Manuel
+- Tohalino Aroste, Fabio Antonio
+- Machaca Mamani, Luis Alberto
 
-- **Jefe de proyecto**: responsable de la coordinación general.
-- **Analista de requisitos**: asegura la calidad de los requisitos de usuario.
+- **Analista de requisitos**: Vincula Nuñovero, Matias Sebastian
 - **Equipo de desarrollo**:
-  - *Desarrollador A*: módulo backend.
-  - *Desarrollador B*: módulo frontend.
-- **Responsable de pruebas**: define y ejecuta los casos de prueba.
+  - *Desarrollador A*: Tohalino Aroste, Fabio Antonio.
+  - *Desarrollador B*: Cansaya Cutipa, Frank Manuel.
+- **Responsable de pruebas**: Machaca Mamani, Luis Alberto
 
 
 | Rol | Nombre | Responsabilidades |
 |-----|--------|-------------------|
-| Jefe de Proyecto | Alumno 1 | Coordinar tareas, comunicación con docente |
-| Desarrollador | Alumno 2 | Programación backend |
-| Desarrollador | Alumno 3 | Programación frontend |
-| Tester | Alumno 4 | Diseño y ejecución de pruebas |
+| Analista de requisitos | Vincula Nuñovero, Matias Sebastian | Documentar y validar requisitos funcionales y no funcionales con clientes y equipo. |
+| Desarrollador Backend | Tohalino Aroste, Fabio Antonio | Implementación de funciones como gestión de productos, inventario, ventas y reportes. |
+| Desarrollador Frontend | Cansaya Cutipa, Frank Manuel | Desarrollo de interfaces para registro, consulta, reportes, usabilidad y experiencia del usuario. |
+| Tester | Machaca Mamani, Luis Alberto | Diseño y ejecución de pruebas funcionales y no funcionales; validación de casos de uso y criterios de aceptación.|
