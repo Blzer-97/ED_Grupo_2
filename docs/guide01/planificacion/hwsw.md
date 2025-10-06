@@ -1,27 +1,21 @@
 # Requisitos de Hardware y Software
 
-# Ejemplo
-## Hardware
-### PC para desarrollo y para el uso final:
-- Procesador: Intel Core i5 (8ª gen) o AMD Ryzen 5 (serie 3000) o superior
-- Memoria RAM: Mínimo 8 GB
-- Almacenamiento: 256 GB SSD (recomendado)
-### Conectividad:
-- Acceso a Internet solo requerido durante el desarrollo (para descargas, actualizaciones y GitHub).
-- La ejecución del sistema final no depende de conexión a Internet
+## Para el desarrollo de código:
+### Hardware
+- Procesador: AMD A10-7860K Radeon R7, 12 Compute Cores 4C+8G
+- Memoria RAM: 16.0 GB
+- Tarjeta gráfica: AMD Radeon(TM) R7 Graphics
+- Almacenamiento: 224 GB SSD
+- Tipo de sistema: Procesador de 64 bits
+- Conectividad: Acceso a Internet para descargas y actualizaciones de Software (5mbs)
+### Software
+- Sistema Operativo: Windows 10 Pro
+- Lenguaje de Programación: Java SE 17 LTS
+- Entorno de Desarrollo (IDE): Apache NetBeans IDE 17, por el soporte para JavaFX y herramientas integradas de desarrollo visual.
+- Librerías: JavaFX 17+, para la interfaz gráfica del usuario como para los gráficos de reportes (javafx.chart).
+- Control de Versiones: GitHub
 
-## Software
-### Sistema Operativo
-- Windows 10 / Windows 11
-### Lenguaje de Programación
-- Java SE 17 LTS
-### Entorno de Desarrollo (IDE)
-- Apache NetBeans IDE 17.
-- Incluye soporte para JavaFX y herramientas integradas de desarrollo visual.
-### Interfaz de Usuario y Visualización de Gráficos.
-- JavaFX 17+
-- Se utilizará tanto para la interfaz gráfica del usuario como para los gráficos de reportes.
-- Librería recomendada para gráficos: javafx.chart.
-### Control de Versiones
-- Git: Sistema de control de versiones distribuido
-- GitHub: Plataforma para alojar el repositorio del proyecto
+## Para el cliente (uso final):
+- Sistema Operativo: Windows 10, compatible con Java Runtime Environment (JRE) necesario para ejecutar la aplicación.
+- Java Runtime Environment: Java SE 17 Runtime, para permitir la ejecución de la aplicación sin la necesidad completa del JDK.
+- No se requerirán IDE ni herramientas de desarrollo, solo el entorno mínimo necesario para correr la aplicación.
