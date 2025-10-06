@@ -5,6 +5,7 @@
 - Tohalino Aroste, Fabio Antonio
 - Machaca Mamani, Luis Alberto
 
+### ED02 Roles:
 - **Analista de requisitos**: Vincula Nuñovero, Matias Sebastian
 - **Equipo de desarrollo**:
   - *Desarrollador A*: Tohalino Aroste, Fabio Antonio.
