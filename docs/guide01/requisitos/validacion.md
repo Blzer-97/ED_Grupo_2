@@ -11,11 +11,3 @@ Luego de la negociación y discusión de requisitos con el cliente, se realizó 
 ### 4. Interpretación de los requisitos
    - Se realizaron y realizarán sesiones de revisión para que el cliente pueda validar los avances y funcionalidades del sistema.
    - El cliente aclaró dudas sobre funcionalidades del sistema (validación de la boleta de venta ante SUNAT y registro de compra y venta).
-# Tips para mayor claridad
-
-## Propósito
-Tener requisitos técnicos debidamente validados antes de su implementación.
-
-## Qué se espera
-Elaborar una buena planificación del proyecto a fin de mitigar altos costos de esfuerzo durante la implementación.
-  
