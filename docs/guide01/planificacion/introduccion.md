@@ -1,6 +1,6 @@
 ## Introducción
 
-El presente plan de proyecto tiene como propósito describir el desarrollo del software **“Sistema de Gestión para una Mecánica Automotriz”**.  
+El presente plan de proyecto tiene como propósito describir el desarrollo del software *“Sistema de Gestión para una Mecánica Automotriz”*.  
 El objetivo principal es diseñar y construir un producto que permita administrar de manera eficiente las operaciones de un taller mecánico, incluyendo el registro de compra y venta de productos, la gestión de servicios ofrecidos, el control de inventario y la generación de reportes administrativos.
 
 Se busca optimizar los procesos internos de la mecánica, reemplazando su sistema actual por una solución más centralizada, automatizada y confiable.
