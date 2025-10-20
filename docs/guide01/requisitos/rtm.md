@@ -125,7 +125,29 @@ FIN
 - Borrar o desactivar un servicio existente.
 #### 4. Función consultarServicio:
 - Listar todos los servicios activos con precios.
-### RF004 - Creación de Reportes
+```
+FUNCIÓN registrarServicio(nombre, precio)
+    servicio = crear(nombre, precio)
+    guardar(servicio)
+FIN
+
+FUNCIÓN modificarServicio(id, nuevoPrecio)
+    servicio = buscar(id)
+    servicio.precio = nuevoPrecio
+FIN
+
+FUNCIÓN eliminarServicio(id)
+    servicio = buscar(id)
+    servicio.activo = false
+FIN
+
+FUNCIÓN consultarServicios()
+    lista = obtenerServicios()
+    RETORNAR lista
+FIN
+```
+
+### RF005 - Creación de Reportes
 #### 1. Función generarReporteVentasPeriodo:
 - Generar reporte de ventas en un rango de fechas especificado por el usuario.
 - Permitir filtros por producto, categoría o servicio.
@@ -155,3 +177,35 @@ El sistema debe procesar y actualizar la información en tiempos mínimos acepta
 ### Restricciones técnicas del software:
 - El software debe funcionar completamente en almacenamiento local, sin depender de Internet.
 - No deben utilizarse tecnologías o librerías no compatibles con las plataformas objetivo.
+```
+FUNCIÓN reporteVentas(fechaInicio, fechaFin)
+    ventas = obtenerVentas(fechaInicio, fechaFin)
+    total = calcularTotal(ventas)
+    RETORNAR {ventas, total}
+FIN
+
+FUNCIÓN productoMasVendido(fechaInicio, fechaFin)
+    productos = contarVentasPorProducto(fechaInicio, fechaFin)
+    masVendido = encontrarMaximo(productos)
+    RETORNAR masVendido
+FIN
+
+FUNCIÓN compararMeses(mes1, mes2)
+    ganancia1 = calcularGanancia(mes1)
+    ganancia2 = calcularGanancia(mes2)
+    diferencia = ganancia2 - ganancia1
+    RETORNAR {mes1: ganancia1, mes2: ganancia2, diferencia}
+FIN
+
+FUNCIÓN reporteInventario()
+    productos = obtenerProductos()
+    bajosStock = filtrarStockBajo(productos)
+    RETORNAR {productos, bajosStock}
+FIN
+
+FUNCIÓN generarGrafico(datos, tipo)
+    SI tipo = "barras" ENTONCES graficoBarras(datos)
+    SI tipo = "pastel" ENTONCES graficoPastel(datos)
+    SI tipo = "lineas" ENTONCES graficoLineas(datos)
+FIN
+```
