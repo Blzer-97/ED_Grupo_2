@@ -14,6 +14,32 @@
 #### 4. Función consultarProducto:
 - Visualización de información del producto, su stock actual y reporte del producto en ventas.
 - Soporte para paginación y ordenamiento por campos como nombre o categoría.
+
+```
+FUNCIÓN registrarProducto(nombre, sku, categoria, stock, costo, venta)
+    SI sku ya existe ENTONCES error
+    producto = crear(nombre, sku, categoria, stock, costo, venta)
+    guardar(producto)
+FIN
+
+FUNCIÓN modificarProducto(id, nuevosDatos)
+    producto = buscar(id)
+    actualizar(producto, nuevosDatos)
+FIN
+
+FUNCIÓN eliminarProducto(id)
+    SI confirmar() ENTONCES
+        producto = buscar(id)
+        producto.activo = false
+    FIN SI
+FIN
+
+FUNCIÓN consultarProductos()
+    lista = obtenerProductos()
+    RETORNAR lista
+FIN
+```
+
 ### RF002 - Gestión de Inventario
 #### 1. Función registrarEntrada:
 - Registrar una entrada de inventario (compra u otro tipo de ingreso).
@@ -26,6 +52,27 @@
 - Función interna par ajustar stock según operacion (entrada o salida).
 #### 4. Función consultarHistorial:
 - Mostrar movimientos de inventario guardados para un producto, con filtros opcionales.
+```
+FUNCIÓN registrarEntrada(producto, cantidad)
+    stockAnterior = producto.stock
+    producto.stock = producto.stock + cantidad
+    guardarMovimiento("ENTRADA", producto, cantidad)
+FIN
+
+FUNCIÓN registrarSalida(producto, cantidad)
+    SI producto.stock >= cantidad ENTONCES
+        producto.stock = producto.stock - cantidad
+        guardarMovimiento("SALIDA", producto, cantidad)
+    SINO
+        error("Stock insuficiente")
+    FIN SI
+FIN
+
+FUNCIÓN consultarHistorial(producto)
+    movimientos = obtenerMovimientos(producto)
+    RETORNAR movimientos
+FIN
+```
 ### RF003 - Gestión de Ventas
 #### 1. Función registrarVenta:
 - Registrar venta con lista de productos, cantidades, precio unitario, etc.
@@ -40,6 +87,35 @@
 #### 3. Función verRentabilidad:
 - Calcular margen de ganancia para cada producto vendido: (precioVenta - precioCosto) * cantidad.
 - Sumar margen total de la venta para análisis.
+```
+FUNCIÓN registrarVenta(items, cliente)
+    total = 0
+    PARA CADA item EN items
+        SI item.esProducto ENTONCES
+            registrarSalida(item.producto, item.cantidad)
+        FIN SI
+        subtotal = item.cantidad * item.precio
+        total = total + subtotal
+    FIN PARA
+    
+    venta = crearVenta(items, total, cliente)
+    guardar(venta)
+FIN
+
+FUNCIÓN generarBoleta(venta)
+    pdf = crearPDF(venta)
+    RETORNAR pdf
+FIN
+
+FUNCIÓN verRentabilidad(venta)
+    ganancia = 0
+    PARA CADA item EN venta.items
+        costo = item.producto.costo
+        ganancia = ganancia + (item.precio - costo) * item.cantidad
+    FIN PARA
+    RETORNAR ganancia
+FIN
+```
 ### RF004 - Gestión de Servicios
 #### 1. Función registrarServicio:
 - Añadir nuevo servicio al catálogo local (nombre, precio predeterminado).
