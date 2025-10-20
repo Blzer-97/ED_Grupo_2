@@ -165,18 +165,6 @@ FIN
 #### 5. Función visualizarGraficosReporte:
 Generar gráficos de barras, líneas o pastel para análisis visual.
 Permitir interacción como selección de meses o productos para el análisis dinámico.
-## Requisitos no funcionales
-### Portabilidad del software:
-El sistema debe ser compatible con Windows para permitir su ejecución local en PCs diversas, sin dependencias externas difíciles de manejar.
-### Facilidad de mantenimiento:
-El software debe estar desarrollado con un código claro y modular, principalmente se busca comentarios para que sea escalable a futuro.
-### Usabilidad del software:
-La interfaz de usuario debe ser intuitiva y simple, requisito mencionado por el cliente, debe contar con flujos de trabajo simples y consistentes.
-### Velocidad de procesamiento de datos:
-El sistema debe procesar y actualizar la información en tiempos mínimos aceptables, por la naturaleza de un único taller mecánico, no existen cantidades masivas de datos.
-### Restricciones técnicas del software:
-- El software debe funcionar completamente en almacenamiento local, sin depender de Internet.
-- No deben utilizarse tecnologías o librerías no compatibles con las plataformas objetivo.
 ```
 FUNCIÓN reporteVentas(fechaInicio, fechaFin)
     ventas = obtenerVentas(fechaInicio, fechaFin)
@@ -209,3 +197,15 @@ FUNCIÓN generarGrafico(datos, tipo)
     SI tipo = "lineas" ENTONCES graficoLineas(datos)
 FIN
 ```
+## Requisitos no funcionales
+### Portabilidad del software:
+El sistema debe ser compatible con Windows para permitir su ejecución local en PCs diversas, sin dependencias externas difíciles de manejar.
+### Facilidad de mantenimiento:
+El software debe estar desarrollado con un código claro y modular, principalmente se busca comentarios para que sea escalable a futuro.
+### Usabilidad del software:
+La interfaz de usuario debe ser intuitiva y simple, requisito mencionado por el cliente, debe contar con flujos de trabajo simples y consistentes.
+### Velocidad de procesamiento de datos:
+El sistema debe procesar y actualizar la información en tiempos mínimos aceptables, por la naturaleza de un único taller mecánico, no existen cantidades masivas de datos.
+### Restricciones técnicas del software:
+- El software debe funcionar completamente en almacenamiento local, sin depender de Internet.
+- No deben utilizarse tecnologías o librerías no compatibles con las plataformas objetivo.
