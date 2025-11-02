@@ -1,8 +1,7 @@
 ## Diagrama de casos de uso
-
-Diagramas y documentación de cada uno de los casos de uso. Con respecto a la documentación de los casos de uso, incluirán lo siguiente:
-- Además de los datos del encabezado del CU, incluirán flujo principal y reglas de negocio como mínimo.
-- Usar la herramienta gráfica de su preferencia
-- Mantener la notación UML de los casos de uso (relaciones include y exclude)
-- Subir las imagenes en formato .png, .jpg.
-- Resolución de 300 dpi para cada imagen.
+Diagrama 1 - Gestión de núcleo
+![Diagrama 1 - Gestión de núcleo](https://github.com/user-attachments/assets/f4cf85ed-dbfc-4f1d-9e5a-6db8bba95159)
+Diagrama 2 - Operaciones Diarias
+![Diagrama 2 - Operaciones Diarias](https://github.com/user-attachments/assets/1855124e-ad61-4701-b646-7212d67db2c6)
+Diagrama 3 - Administración y reportes
+![Diagrama 3 - Administración y reportes](https://github.com/user-attachments/assets/f32b0dec-6229-4e3f-a9b1-ab52bbfee9f2)
