@@ -2,7 +2,7 @@
 
 ## 1) Ingreso de productos 
 
-<pre> ```
+<pre> 
 Producto:
     nombre
     sku
@@ -30,10 +30,11 @@ Funcion RegistrarProducto(datos):
     guardar producto
     devolver "OK"
 Fin
-``` </pre>
+ </pre>
 
 ## 2) Registro de movimientos 
 
+<pre>
 Movimiento:
     tipo          
     fecha
@@ -94,3 +95,4 @@ Funcion ModificarMovimiento(idMovimiento, nuevoTipo, nuevosItems):
         devolver RegistrarVenta(nuevosItems)
     devolver "Error: tipo inválido"
 Fin
+ </pre>
