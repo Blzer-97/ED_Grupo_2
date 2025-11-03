@@ -1,6 +1,8 @@
 ## Pseudocódigo de los requisitos de sistema más importantes (Requisitos funcionales mandatorios)
 
+## 1) Ingreso de productos 
 
+<pre> ```
 Producto:
     nombre
     sku
@@ -10,8 +12,6 @@ Producto:
     stock
     caracteristicas
     activo
-
-## 1) Ingreso de productos 
 
 Funcion RegistrarProducto(datos):
     Si datos.nombre está vacío o datos.sku está vacío:
@@ -30,6 +30,7 @@ Funcion RegistrarProducto(datos):
     guardar producto
     devolver "OK"
 Fin
+``` </pre>
 
 ## 2) Registro de movimientos 
 
