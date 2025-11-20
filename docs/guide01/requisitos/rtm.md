@@ -159,10 +159,7 @@ FIN
 - Extraer ganancias netas (ingresos menos costos) de dos meses y años seleccionados.
 - Mostrar tabla comparativa con diferencias absolutas y porcentuales de ganancias.
 - Visualizar evolución y tendencias entre los períodos.
-#### 4. Función generarReporteInventario:
-- Listar movimientos de inventario (entradas y salidas) filtrados por fecha, producto o tipo de movimiento.
-- Resaltar productos con stock bajo o movimientos inusuales para atención inmediata.
-#### 5. Función visualizarGraficosReporte:
+#### 4. Función visualizarGraficosReporte:
 Generar gráficos de barras, líneas o pastel para análisis visual.
 Permitir interacción como selección de meses o productos para el análisis dinámico.
 ```
