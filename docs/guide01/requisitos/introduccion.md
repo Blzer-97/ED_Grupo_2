@@ -1,8 +1,3 @@
-# Guía 01 — "GUIA DE APRENDIZAJE PARA LA PLANIFICACIÓN DE UN PROYECTO DE SOFTWARE"
-
-Breve descripción.
-Los equipos de desarrollo podrán formular sus proyectos de software de la siguiente forma:
-- Propuesta del equipo: Podrán generar una propuesta de proyecto a partir de alguna necesidad de información de caracter general que no necesite un cliente en específico sino mas bien representa un dominio de negocio determinado.
-- Propuesta del docente: La docente puede proponer proyectos de desarrollo los cuales podran ser coordinados con los equipos de desarrollo que tengan dificultades para formular su propuesta.
-- A solicitud de un cliente real. El equipo de desarrollo debe tener acceso al cliente para realizar las tareas de recopilación de requisitos y para la etapa de pruebas del software desde la perspectiva de aceptación del usuario.
-En cualquier caso, la docente cumple el rol de supervisor del proyecto.
+El presente plan de proyecto tiene como propósito describir el desarrollo del software “Sistema de Gestión para una Mecánica Automotriz” para un cliente real.
+El objetivo principal es diseñar y construir un producto que permita administrar de manera eficiente las operaciones de un taller mecánico, incluyendo el registro de compra y venta de productos, la gestión de servicios ofrecidos, el control de inventario y la generación de reportes administrativos.
+Se busca optimizar los procesos internos de la mecánica, reemplazando su sistema actual por una solución más centralizada, automatizada y confiable. El tiempo de ejecución proyectado abarca las etapas de análisis, diseño, desarrollo, pruebas y despliegue del prototipo funcional. Entre las limitaciones identificadas se incluyen la disponibilidad del personal del taller para entrevistas y pruebas, la posible falta de experiencia del equipo en las herramientas de desarrollo seleccionadas y el tiempo restringido para implementar todas las funcionalidades planificadas en la primera versión del sistema.
