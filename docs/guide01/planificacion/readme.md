@@ -6,5 +6,5 @@ El plan del proyecto establece los recursos disponibles para el proyecto, el des
 - [Requisitos de hardware y software](hwsw.md)
 - [Desglose del trabajo](desglose.md)
 - [Riesgos](riesgos.md)
-- [Cronograma del proyecto](cronograma.md)
+- [Cronograma del proyecto](cronograma.pdf)
 - [Mockups del proyecto](mockups.md)
