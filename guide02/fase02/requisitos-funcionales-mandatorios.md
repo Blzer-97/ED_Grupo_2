@@ -1,7 +1,14 @@
 ## Descripción detallada de requisitos funcionales mandatorios del software
-
 Este apartado ya fue trabajado en la sección "Requisitos funcionales" de:
+[RTM de la Guía 01](docs/guide01/requisitos/rtm.md)
 
-[RTM de la Guía 01](../docs/guide01/requisitos/rtm.md)
+### Requisitos funcionales mandatorios
+La gestión del sistema debe permitir el manejo integral de productos, inventario, ventas, servicios y reportes, garantizando el cumplimiento de reglas obligatorias en cada proceso. Para los productos, el sistema debe posibilitar el registro mediante la captura de nombre, SKU único, categoría, stock inicial y precios, validando siempre la obligatoriedad de los campos y la unicidad del SKU. Asimismo, debe permitir la modificación controlada de los datos editables sin afectar operaciones de venta o cotización que dependan del producto. La eliminación debe realizarse únicamente de forma lógica y solo cuando no existan ventas ni movimientos pendientes, solicitando una confirmación explícita del usuario. La consulta debe mostrar información completa del producto, incluido su stock actualizado, con soporte para ordenamiento y paginación.
 
-Consulta y reutiliza ese contenido.
+En el inventario, el sistema debe registrar entradas y salidas que ajusten el stock de los productos, validando siempre la disponibilidad antes de permitir una salida. Cada movimiento debe quedar registrado para permitir la consulta detallada del historial del producto.
+
+En la gestión de ventas, el sistema debe registrar operaciones con productos y servicios, permitiendo que cada línea de producto use o ajuste su precio de venta y que cada línea de servicio acepte descripciones manuales. Debe calcular automáticamente subtotales, impuestos y el total final. Para cotizaciones, debe solicitar confirmación antes de convertirlas en ventas, y debe permitir la cancelación lógica de una venta para excluirla de reportes. También debe generar boletas en PDF con la información completa de la operación y permitir cálculos de rentabilidad basados en costos y cantidades vendidas.
+
+En cuanto a los servicios, el sistema debe permitir registrar nuevos servicios con su precio predeterminado, modificarlos cuando sea necesario y desactivarlos cuando ya no deban estar disponibles, además de ofrecer la consulta de todos los servicios activos con su respectiva información.
+
+Finalmente, para los reportes, el sistema debe generar informes de ventas dentro de rangos de fechas, con posibilidad de aplicar filtros por producto, categoría o servicio. Debe identificar el producto más vendido en un periodo, comparando cantidades y porcentajes respecto del total. Debe permitir comparar ganancias netas entre meses distintos y mostrar diferencias absolutas y porcentuales. Debe ofrecer gráficos en distintos formatos para visualizar tendencias y análisis, incluyendo la selección dinámica de periodos o productos para su representación.
