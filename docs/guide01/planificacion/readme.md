@@ -7,3 +7,4 @@ El plan del proyecto establece los recursos disponibles para el proyecto, el des
 - [Desglose del trabajo](desglose.md)
 - [Riesgos](riesgos.md)
 - [Cronograma del proyecto](cronograma.md)
+- [Mockups del proyecto](mockups.md)
