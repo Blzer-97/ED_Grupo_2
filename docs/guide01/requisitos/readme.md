@@ -3,7 +3,7 @@ Una vez que los equipos de desarrollo han definido su proyecto de software, podr
 
 - [Requisitos de usuario](requisitos-usuarios.md)
 - [Categorización lógica de requisitos de usuario](categorizacion.md)
-- [Negociación y discusión de requisitos de usuario (Opcional)](negociacion.md)
+- [Negociación y discusión de requisitos de usuario](negociacion.md)
 - [Especificación de requisitos de software](rtm.md)
 - [Validación de los requisitos de software](validacion.md)
-- ANEXO: Grabación de reunión en Meet
+- [ANEXO: Grabación de reunión en Meet](validacion.md)
