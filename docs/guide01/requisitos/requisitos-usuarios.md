@@ -1,8 +1,7 @@
 # Requisitos de usuario
-Los requisitos del usuario se expresan en lenguaje natural. Los cuales han sido obtenidos mediante las técnicas de obtención de requisitos descritas en el Anexo A - “Técnicas de obtención de requisitos de software”. Puede incluir:
-- Ámbito funcional que deberá soportar el software por cada parte interesada. Por ejemplo, el área del cliente donde se encuentran los procesos que se necesitan automatizar:
-Compras, Ventas, Atención al cliente, Admisión de estudiantes, Inventario, etc.
-- La descripción del diseño de las funciones más importantes que se tiene previsto realice el sistema de información.
+Los requisitos del usuario se expresan en lenguaje natural. Los cuales han sido obtenidos mediante las técnicas de obtención de requisitos descritas en el Anexo A.
+- El ambito funcional que deberá automatizar el software son: Ventas e Inventario.
+- Las funciones más importantes que debe hacer el sistema con la información ingresas son:
   - Ingreso de productos: el usuario podrá dar de alta productos indicando nombre, SKU, costo, precio de venta, stock y características.
 
   - Registro de movimientos: se permitirá registrar compras y ventas, tambeien actualizar el stock respecto a las ventas y poder modificarlos en caso de nuevos ingresos.
@@ -16,8 +15,7 @@ Compras, Ventas, Atención al cliente, Admisión de estudiantes, Inventario, etc
   - Gestión de servicios: cada servicio será registrado y listado para la seleccion al momento de la generacion de la boleta, luego mostrará margen de ganancia el cual sera editable respecto      a la dificultad que pueda representar al negocio del cliente.
   
 ## Anexo A: Técnicas de obtención de requisitos de software
-Documentar las técnicas que utilizaron para realizar la obtención de requisitos del software: Entrevistas, Encuestas, Cuestionarios, Análisis de tareas, Análisis del dominio, 
-Prototipos (a través del uso de wireframes), Observación, entre otras técnicas innovadoras que el ED haya podido realizar durante la etapa de recopilación de requisitos del software.
+Se adjuntó en la guía01/requisitos un archivo con los enlaces de la grabación de reuniones y formulario de preguntas usado, las técnicas usadas fueron:
 
   - Entrevistas: se entrevistó al cliente para conocer el flujo actual de ingresos y salidas de productos asi como el sistema que usa actualmente.
 
