@@ -6,4 +6,4 @@ Una vez que los equipos de desarrollo han definido su proyecto de software, podr
 - [Negociación y discusión de requisitos de usuario](negociacion.md)
 - [Especificación de requisitos de software](rtm.md)
 - [Validación de los requisitos de software](validacion.md)
-- [ANEXO: Grabación de reunión en Meet](validacion.md)
+- [ANEXO: Grabación de reunión en Meet](docs/guide01/requisitos/Anexo A: Grabación de reuniones.md)
