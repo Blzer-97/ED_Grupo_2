@@ -7,35 +7,34 @@
 - Editar y eliminar productos existentes.
 - Consultar ficha detallada de cada producto.
 ### Gestión de inventario
-- Registro de entradas (compras o ingresos de productos) y salidas (ventas o retiros de stock).
+- Registro de entradas (Ingreso de Stock) y salidas (Mediante ventas o retiros manuales).
 - Actualización automática del stock al registrar entradas o salidas.
+- Los productos ingresados a stock en una misma fecha deben registrarse de forma agrupada, incluyendo la fecha y hora del registro.
 - Historial de movimientos de inventario por producto.
 ### Gestión de ventas
-- Registrar ventas con detalle de productos vendidos, cantidad, precio unitario, subtotal, IGV, descuentos y total.
+- Registrar ventas con detalle de productos vendidos, cantidad, precio unitario (Puede editarse del precio predeterminado), subtotal, IGV, y total.
 - Cálculo automático del subtotal y del total.
 - Generación de boletas en formato digital (PDF o impresión).
 ### Cálculo de rentabilidad
 - Cálculo automático del margen de ganancia en cada venta.
+- Comparación con la ganacia del mes anterior.
 ### Gestión de servicios
 - Lista de servicios con precio por servicio.
-- Posibilidad de editar o eliminar servicios registrados.
-### Control de usuario único (uso personal)
+- Posibilidad de editar o desactivar un servicio registrado.
+### Control de usuario único
+- Uso personal para un solo mecánico.
 
 ## Requisitos Funcionales de Mejora
 
 ### Búsqueda y filtros de productos
+- Interfaz adapatada para encontrar datos específicos.
 ### Reportes y estadísticas
 - Generación de reportes de ventas por período.
-### Soporte de impuestos configurables
-- Configurar porcentaje de IGV y moneda de operación.
-- Conversión automática de moneda si se desea.
 ### Interfaz de usuario mejorada
 - Diseño con navegación simple.
 - Atajos y botones de acceso rápido.
 
-
 ## Requisitos Funcionales que no Generan Valor a la Organización
-
-- No se evidenció ningún requisito que no genere valor.
-
+- Requerir que el usuario ingrese manualmente la fecha y hora en cada movimiento de inventario.
+- Generar informes diarios de artículos no vendidos.
 
