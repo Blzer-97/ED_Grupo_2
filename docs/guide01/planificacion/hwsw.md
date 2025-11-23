@@ -10,9 +10,14 @@
 - Conectividad: Acceso a Internet para descargas y actualizaciones de Software (5mbs)
 ### Software
 - Sistema Operativo: Windows 10 Pro
-- Lenguaje de Programación: Java SE 17 LTS
-- Entorno de Desarrollo (IDE): Apache NetBeans IDE 17, por el soporte para JavaFX y herramientas integradas de desarrollo visual.
-- Librerías: JavaFX 17+, para la interfaz gráfica del usuario como para los gráficos de reportes (javafx.chart).
+- Lenguaje de Programación: Java 17 (configurado mediante la propiedad <release> en Maven)
+- Entorno de Desarrollo (IDE): Apache NetBeans IDE 20
+- Gestión de proyecto y dependencias: Apache Maven, conforme al archivo pom.xml del proyecto
+- Dependencias Incluidas:
+  - Jackson Databind (procesamiento de JSON)
+  - Apache PDFBox (generación de boletas en PDF)
+  - JCalendar (opcional, para manejo de fechas en reportes)
+- Empaquetado: Generación de un archivo JAR ejecutable (“fat jar”) mediante maven-assembly-plugin, especificando la clase principal grupo2.mecanica_ed_02.App bajo el nombre final GestionMecanica.jar
 - Control de Versiones: GitHub
 
 ## Para el cliente (uso final):
