@@ -1,6 +1,6 @@
 ## Descripción detallada de requisitos funcionales mandatorios del software
 Este apartado ya fue trabajado en la sección "Requisitos funcionales" de:
-[RTM de la Guía 01](docs/guide01/requisitos/rtm.md)
+[RTM de la Guía 01](../../docs/guide01/requisitos/rtm.md)
 
 ### Requisitos funcionales mandatorios
 La gestión del sistema debe permitir el manejo integral de productos, inventario, ventas, servicios y reportes, garantizando el cumplimiento de reglas obligatorias en cada proceso. Para los productos, el sistema debe posibilitar el registro mediante la captura de nombre, SKU único, categoría, stock inicial y precios, validando siempre la obligatoriedad de los campos y la unicidad del SKU. Asimismo, debe permitir la modificación controlada de los datos editables sin afectar operaciones de venta o cotización que dependan del producto. La eliminación debe realizarse únicamente de forma lógica y solo cuando no existan ventas ni movimientos pendientes, solicitando una confirmación explícita del usuario. La consulta debe mostrar información completa del producto, incluido su stock actualizado, con soporte para ordenamiento y paginación.
