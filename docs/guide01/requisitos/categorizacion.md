@@ -13,9 +13,10 @@
 ### Gestión de ventas
 - Registrar ventas con detalle de productos vendidos, cantidad, precio unitario (Puede editarse del precio predeterminado), subtotal, IGV, y total.
 - Cálculo automático del subtotal y del total.
-- Generación de boletas en formato digital (PDF o impresión).
+- Generación de boletas en formato digital (PDF).
 ### Cálculo de rentabilidad
 - Cálculo general de rentabilidad.
+- Ver la rentabilidad dentro de un periodo.
 ### Gestión de servicios
 - Lista de servicios con precio por servicio.
 - Posibilidad de editar o eliminar.
