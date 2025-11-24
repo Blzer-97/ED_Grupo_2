@@ -3,12 +3,12 @@ Se muestran las pantallas principales de la aplicación java.
 
 ### Gestión de Inventario
 Se puede ver el listado de productos registrados con su stock actual. Aquí se realiza el ingreso de stock.
-<img width="1030" height="609" alt="image" src="https://github.com/user-attachments/assets/f8940af2-b067-4b45-a4c4-fbab7e3df386" />
+<img width="1037" height="618" alt="image" src="https://github.com/user-attachments/assets/48fd0fbd-4e61-4f24-8365-a824ab40ab29" />
 
 ### Registro de Ventas
 Puede añadir tanto productos como servicios y editar su precio unitario.
-<img width="1028" height="607" alt="image" src="https://github.com/user-attachments/assets/2efbf504-dbbc-42e8-82bb-0d0896869d4d" />
+<img width="1039" height="618" alt="image" src="https://github.com/user-attachments/assets/fa77314b-aae5-4ab1-84bd-6f332fd42fb6" />
 
 ### Reporte de Ganancia
 Se muestra las ganancias totales, así como los productos más vendidos.
-<img width="1027" height="609" alt="image" src="https://github.com/user-attachments/assets/5b287759-30ab-473e-a7a6-6236b549ac98" />
+<img width="1038" height="616" alt="image" src="https://github.com/user-attachments/assets/0620b9e0-8336-448b-8e90-e7dab52361e1" />
