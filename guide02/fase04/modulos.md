@@ -9,4 +9,5 @@ El módulo de Ventas permite visualizar los productos y servicios disponibles. A
 
 ### Módulo de Reportes
 El módulo de Reportes presenta las ganancias totales obtenidas por ventas, el costo total de los productos adquiridos que fueron vendidos y un listado de los productos más vendidos y los servicios más solicitados, junto con la ganancia generada por cada uno.
-<img width="1035" height="617" alt="image" src="https://github.com/user-attachments/assets/6ada081c-0e69-422d-a08d-087b87d46ee9" />
+<img width="1598" height="978" alt="Screenshot 2025-11-24 005504" src="https://github.com/user-attachments/assets/d7d00db0-c6a8-478d-a75a-a5c55599a858" />
+
