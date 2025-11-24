@@ -83,6 +83,7 @@ FIN
 #### 3. Función verRentabilidad:
 - Calcular margen de ganancia para cada producto vendido: (precioVenta - precioCosto) * cantidad.
 - Sumar margen total de la venta para análisis.
+- Periodo configurable para ver la rentabilidad
 ```
 FUNCIÓN registrarVenta(items, cliente)
     total = 0
@@ -103,13 +104,21 @@ FUNCIÓN generarBoleta(venta)
     RETORNAR pdf
 FIN
 
-FUNCIÓN verRentabilidad(venta)
-    ganancia = 0
-    PARA CADA item EN venta.items
-        costo = item.producto.costo
-        ganancia = ganancia + (item.precio - costo) * item.cantidad
+FUNCION verRentabilidad(fechaInicio, fechaFin)
+    listaVentas = obtenerVentasPorFechas(fechaInicio, fechaFin)    
+    margenTotalAcumulado = 0
+    listaDetalles = []
+
+    PARA CADA item EN listaVentas HACER
+        margenIndividual = (item.precioVenta - item.precioCosto) * item.cantidad
+        margenTotalAcumulado = margenTotalAcumulado + margenIndividual
+        AGREGAR margenIndividual A listaDetalles
     FIN PARA
-    RETORNAR ganancia
+
+    RETORNAR { 
+        rentabilidadTotal: margenTotalAcumulado, 
+        detalle: listaDetalles 
+    }
 FIN
 ```
 ### RF004 - Gestión de Servicios
