@@ -11,6 +11,9 @@ import grupo2.mecanica_ed_02.Modelos.Servicio;
 import grupo2.mecanica_ed_02.Persistence.GestorDatosJSON;
 import java.util.List;
 
+/**
+ * Tarea D3: CRUD de Servicios.
+ */
 public class ServicioService {
 
     private final GestorDatosJSON gestorDatos;
@@ -25,11 +28,11 @@ public class ServicioService {
 
     public Servicio registrarServicio(Servicio servicio) {
         List<Servicio> servicios = getServicios();
-
+        
         // Simular autoincremento
         int maxId = servicios.stream().mapToInt(Servicio::getId).max().orElse(0);
         servicio.setId(maxId + 1);
-
+        
         servicios.add(servicio);
         gestorDatos.guardarServicios(servicios);
         return servicio;
@@ -58,7 +61,7 @@ public class ServicioService {
 ### Clase InventarioService
 La clase InventarioService administra la lógica de negocio relacionada con productos y movimientos de inventario. Permite obtener, registrar, actualizar y eliminar productos almacenados en JSON, validando condiciones como la unicidad del SKU y la existencia del producto antes de modificarlo. También gestiona el registro de movimientos de stock, ajustando el inventario del producto según entradas o salidas y registrando cada movimiento en el historial.
 
-{
+```
 package grupo2.mecanica_ed_02.Service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -70,6 +73,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Tarea D2: Lógica de Inventario y Productos.
+ * Gestiona el CRUD de productos y el registro de movimientos de stock.
+ */
 public class InventarioService {
 
     private final GestorDatosJSON gestorDatos;
@@ -77,6 +84,8 @@ public class InventarioService {
     public InventarioService(GestorDatosJSON gestorDatos) {
         this.gestorDatos = gestorDatos;
     }
+
+    // --- Tarea 2.1: Lógica de Servicio de Inventario (CRUD) ---
 
     public List<Producto> getProductos() {
         return gestorDatos.leerProductos(); // Usa el método fachada
@@ -115,7 +124,7 @@ public class InventarioService {
         }
 
         if (!encontrado) {
-            throw new RuntimeException("Error: No se pudo actualizar. Producto con SKU '" + productoActualizado.getSku() + "' no     encontrado.");
+            throw new RuntimeException("Error: No se pudo actualizar. Producto con SKU '" + productoActualizado.getSku() + "' no encontrado.");
         }
         
         gestorDatos.guardarProductos(productos);
@@ -133,6 +142,12 @@ public class InventarioService {
         gestorDatos.guardarProductos(productos);
     }
 
+    // --- Tarea 2.2: Lógica de Movimientos de Stock ---
+    
+    /**
+     * Registra un movimiento y actualiza el stock del producto.
+     * La cantidad puede ser positiva (ENTRADA) o negativa (SALIDA).
+     */
     public void registrarMovimiento(MovimientoInventario mov) {
         Producto producto = findProductoBySku(mov.getSkuProducto());
         if (producto == null) {
@@ -162,12 +177,12 @@ public class InventarioService {
                 .collect(Collectors.toList());
     }
 }
-}
+```
 
 ### Clase VentaService
 La clase VentaService gestiona el proceso completo de registrar una venta. Asigna un identificador y fecha si no están definidos, calcula los importes de la venta (subtotal, IGV, total y margen de ganancia) usando CalculadoraVentas, descuenta del inventario el stock de los productos incluidos mediante movimientos de salida, y finalmente guarda la venta actualizada en el almacenamiento JSON.
 
-{
+```
 package grupo2.mecanica_ed_02.Service;
 
 import grupo2.mecanica_ed_02.Modelos.ItemVenta;
@@ -180,6 +195,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Tarea D3: Lógica de Servicio de Venta.
+ */
 public class VentaService {
 
     private final GestorDatosJSON gestorDatos;
@@ -192,6 +210,9 @@ public class VentaService {
         this.calculadoraVentas = calculadoraVentas;
     }
 
+    /**
+     * Registra una venta, calcula totales y descuenta el stock.
+     */
     public Venta registrarVenta(Venta venta) {
         // 1. Asignar ID y Fecha si no existen
         if (venta.getId() == null) {
@@ -239,4 +260,4 @@ public class VentaService {
         return venta;
     }
 }
-}
+```
