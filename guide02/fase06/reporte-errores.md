@@ -1,6 +1,7 @@
 ## Reporte de errores
 El detalle de los errores encontrados serán indicados en el Anexo 2 - “Informe de errores encontrados”:
-NOTA: Hacer clic en las imágenes para verlas con mayor claridad.
+
+#### NOTA: Hacer clic en las imágenes para verlas con mayor claridad.
 
 ## Anexo 2: “Informe de errores encontrados”
 
