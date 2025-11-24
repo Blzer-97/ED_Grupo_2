@@ -4,6 +4,7 @@ Las clases service contienen la lógica de negocio y muestran cómo operan las f
 ### Clase ServicioService
 La clase ServicioService gestiona la lógica de negocio relacionada con los objetos Servicio. Obtiene la lista de servicios desde un gestor de datos, permite registrar uno nuevo asignándole un id incremental, actualizar un servicio existente reemplazándolo en la lista y eliminar servicios por su id. Cada operación persiste los cambios mediante GestorDatosJSON, que actúa como capa de almacenamiento.
 
+{
 package grupo2.mecanica_ed_02.Service;
 
 import grupo2.mecanica_ed_02.Modelos.Servicio;
@@ -52,10 +53,12 @@ public class ServicioService {
         gestorDatos.guardarServicios(servicios);
     }
 }
+}
 
 ### Clase InventarioService
 La clase InventarioService administra la lógica de negocio relacionada con productos y movimientos de inventario. Permite obtener, registrar, actualizar y eliminar productos almacenados en JSON, validando condiciones como la unicidad del SKU y la existencia del producto antes de modificarlo. También gestiona el registro de movimientos de stock, ajustando el inventario del producto según entradas o salidas y registrando cada movimiento en el historial.
 
+{
 package grupo2.mecanica_ed_02.Service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -159,10 +162,12 @@ public class InventarioService {
                 .collect(Collectors.toList());
     }
 }
+}
 
 ### Clase VentaService
 La clase VentaService gestiona el proceso completo de registrar una venta. Asigna un identificador y fecha si no están definidos, calcula los importes de la venta (subtotal, IGV, total y margen de ganancia) usando CalculadoraVentas, descuenta del inventario el stock de los productos incluidos mediante movimientos de salida, y finalmente guarda la venta actualizada en el almacenamiento JSON.
 
+{
 package grupo2.mecanica_ed_02.Service;
 
 import grupo2.mecanica_ed_02.Modelos.ItemVenta;
@@ -233,4 +238,5 @@ public class VentaService {
 
         return venta;
     }
+}
 }
