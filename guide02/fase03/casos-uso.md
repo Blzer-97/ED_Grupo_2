@@ -1,16 +1,14 @@
 ## Diagrama de casos de uso
-Diagrama 1 - Gestión de núcleo
+Se uso la herramienta PlantUML para la creación de casos de uso. En total se identificaron 5 y fueron obtenidos del diagrama de procesos.
 
-<img width="564" height="646" alt="Gestión de núcleo" src="https://github.com/user-attachments/assets/e6fe9745-39fc-4be5-aee6-0de33e547b5a" />
+### Caso de uso 01 - Crear orden de servicio
+<img width="2676" height="259" alt="Caso de uso 01" src="https://github.com/user-attachments/assets/92a56fa9-c690-4285-bb88-d422820ae8c5" />
 
+### Caso de uso 02 - Registrar entrada de stock
+<img width="2333" height="206" alt="Caso de uso 02" src="https://github.com/user-attachments/assets/3da6807a-114e-4615-8d8a-3fc0a9ece1bb" />
 
-Diagrama 2 - Operaciones Diarias
+### Caso de uso 03 - Confirmar una cotización
+<img width="2043" height="199" alt="Caso de uso 03" src="https://github.com/user-attachments/assets/5f0173e6-ba68-489a-88d3-4f93fae8a74a" />
 
-<img width="942" height="377" alt="Operaciones diarias" src="https://github.com/user-attachments/assets/354807e0-c77a-4770-a645-6a35454ae404" />
-
-
-Diagrama 3 - Administración y reportes
-
-<img width="504" height="373" alt="Administración" src="https://github.com/user-attachments/assets/6d97f3b4-96e2-41a6-a21e-e0dd1f7fac6d" />
-
-
+### Caso de uso 04 - Generar boleta / factura
+<img width="2049" height="218" alt="Caso de uso 04" src="https://github.com/user-attachments/assets/076673a1-0d69-40aa-b112-1365f57ced5f" />
