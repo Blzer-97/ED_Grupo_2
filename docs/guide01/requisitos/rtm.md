@@ -12,8 +12,7 @@
 - Eliminación lógica (desactivación) permitida solo si no existen ventas o movimientos de inventario relacionados por confirmar.
 - Confirmar nuevamente al usuario antes de ejecutar la eliminación.
 #### 4. Función consultarProducto:
-- Visualización de información del producto, su stock actual y reporte del producto en ventas.
-- Soporte para paginación y ordenamiento por campos como nombre o categoría.
+- Visualización de información del producto, su stock actual.
 
 ```
 FUNCIÓN registrarProducto(nombre, sku, categoria, stock, costo, venta)
@@ -77,10 +76,7 @@ FIN
 #### 1. Función registrarVenta:
 - Registrar venta con lista de productos, cantidades, precio unitario, etc.
 - Para producto: Editar el precio de venta unitario predeterminado de las líneas de orden de venta.
-- Para servicio: Un campo de texto por línea de orden donde se escriben manualmente anotaciones sobre el servicio realizado.
 - Calcular subtotal, aplicar descuentos/impuestos y calcular total, considerar el IGV configurable.
-- Preguntar al usuario sobre confirmación para convertir cotización a orden de venta.
-- Posibilidad de cancelar (desactivar) una venta, para que no se tome en cuenta en los reportes.
 #### 2. Función generarBoleta:
 - Crear documento PDF con los datos completos de la venta (productos, cantidad, subtotal, IGV, total).
 - Opciones para guardar boleta en la computadora.
@@ -122,7 +118,7 @@ FIN
 #### 2. Función modificarServicio:
 - Modificar el nombre y precio predeterminado de un servicio existente.
 #### 3. Función eliminarServicio:
-- Borrar o desactivar un servicio existente.
+- Borrar un servicio existente.
 #### 4. Función consultarServicio:
 - Listar todos los servicios activos con precios.
 ```
@@ -148,50 +144,32 @@ FIN
 ```
 
 ### RF005 - Creación de Reportes
-#### 1. Función generarReporteVentasPeriodo:
-- Generar reporte de ventas en un rango de fechas especificado por el usuario.
-- Permitir filtros por producto, categoría o servicio.
-#### 2. Función obtenerProductoMasVendido:
-- Identificar el producto con mayor cantidad vendida en un período determinado.
-- Calcular y mostrar cantidad total vendida y porcentaje respecto al total de ventas.
+#### 1. Función obtenerProductoVendidos:
+- Calcular y mostrar cantidad total vendida.
 - Permitir comparación entre varios productos relevantes.
-#### 3. Función compararGananciasPorMes:
-- Extraer ganancias netas (ingresos menos costos) de dos meses y años seleccionados.
-- Mostrar tabla comparativa con diferencias absolutas y porcentuales de ganancias.
-- Visualizar evolución y tendencias entre los períodos.
-#### 4. Función visualizarGraficosReporte:
-Generar gráficos de barras, líneas o pastel para análisis visual.
-Permitir interacción como selección de meses o productos para el análisis dinámico.
+#### 2. Función compararGanancias:
+- Extraer ganancias netas.
+- Mostrar tabla comparativa.
+
 ```
-FUNCIÓN reporteVentas(fechaInicio, fechaFin)
-    ventas = obtenerVentas(fechaInicio, fechaFin)
-    total = calcularTotal(ventas)
-    RETORNAR {ventas, total}
+FUNCION obtenerProductoVendidos()
+    cantidadTotal = sumarTodasLasVentas()
+    listaComparativa = obtenerProductosRelevantes()
+    RETORNAR { 
+        total: cantidadTotal, 
+        productos: listaComparativa 
+    }
 FIN
+FUNCION compararGanancias()
+    ingresos = obtenerTotalIngresos()
+    gastos = obtenerTotalGastos()
+    gananciaNeta = ingresos - gastos
+    datosTabla = crearTablaDesglose(ingresos, gastos, gananciaNeta)
 
-FUNCIÓN productoMasVendido(fechaInicio, fechaFin)
-    productos = contarVentasPorProducto(fechaInicio, fechaFin)
-    masVendido = encontrarMaximo(productos)
-    RETORNAR masVendido
-FIN
-
-FUNCIÓN compararMeses(mes1, mes2)
-    ganancia1 = calcularGanancia(mes1)
-    ganancia2 = calcularGanancia(mes2)
-    diferencia = ganancia2 - ganancia1
-    RETORNAR {mes1: ganancia1, mes2: ganancia2, diferencia}
-FIN
-
-FUNCIÓN reporteInventario()
-    productos = obtenerProductos()
-    bajosStock = filtrarStockBajo(productos)
-    RETORNAR {productos, bajosStock}
-FIN
-
-FUNCIÓN generarGrafico(datos, tipo)
-    SI tipo = "barras" ENTONCES graficoBarras(datos)
-    SI tipo = "pastel" ENTONCES graficoPastel(datos)
-    SI tipo = "lineas" ENTONCES graficoLineas(datos)
+    RETORNAR { 
+        neto: gananciaNeta, 
+        tabla: datosTabla 
+    }
 FIN
 ```
 ## Requisitos no funcionales
