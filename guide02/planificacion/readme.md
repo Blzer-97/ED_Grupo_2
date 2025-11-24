@@ -1,10 +1,8 @@
 # Fase 01: Planificación del prototipo de software:
 
-Colocar el plan inicial del proyecto de prototipo de software utilizando la herramienta ProjectLibre y de acuerdo con los lineamientos descritos en la “GUIA DE APRENDIZAJE PARA LA PLANIFICACIÓN DE UN PROYECTO DE SOFTWARE” desarrollado en clase.
+<img width="841" height="507" alt="image" src="https://github.com/user-attachments/assets/3972c528-f06c-4a1e-a36b-78ecd3a58fe9" />
 
-## Instrucciones:
+<img width="1497" height="579" alt="image" src="https://github.com/user-attachments/assets/5a57e7f2-c426-4cab-9542-118cdd26e004" />
 
-- Colocar una imagen en formato .jpg / .png
-- Deseable que la imagen tenga resolución 300 dpi
-- También puede incrustar el archivo .pod del cronograma inicial de trabajo
+
 
