@@ -25,11 +25,8 @@
 
 ### Búsqueda y filtros de productos
 - Interfaz adapatada para encontrar datos específicos.
-### Reportes y estadísticas
-- Generación de reportes de ventas por período.
 ### Interfaz de usuario mejorada
 - Diseño con navegación simple.
-- Atajos y botones de acceso rápido.
 
 ## Requisitos Funcionales que no Generan Valor a la Organización
 - Requerir que el usuario ingrese manualmente la fecha y hora en cada movimiento de inventario.
