@@ -13,8 +13,8 @@
 | 3.1  | Módulos del Software                       | Opciones del menú + procesos del programa      | Todo el equipo                     |
 | 3.2  | Revisar software adecuado                  | Lista de software escogido según hardware      | Todo el equipo                     |
 | 3.3  | Código fuente (Backend)                    | Líneas de código del programa + ejecutable     | Tohalino Aroste, Fabio Antonio     |
-| 3.4  | Código fuente (Frontend)                   | Líneas de código del programa + imágenes       | Cansaya Cutipa, Frank Manuel       |
-| 4.1  | Pruebas unitarias                          | Reportes de pruebas unitarias (Por módulo)     | Machaca Mamani, Luis Alberto       |
+| 3.4  | Código fuente (Frontend)                   | Líneas de código del programa + imágenes       | Tohalino Aroste, Fabio Antonio     |
+| 4.1  | Pruebas unitarias                          | Reportes de pruebas unitarias (Por módulo)     | Todo el equipo                     |
 | 4.2  | Pruebas de caja negra                      | Resultados y validación de pruebas             | Machaca Mamani, Luis Alberto       |
 | 4.3  | Reporte de errores                         | Reportes de errores en el programa final       | Machaca Mamani, Luis Alberto       |
 | 5.1  | Manual de cliente                          | Documento de manual de uso                     | Vincula Nuñovero, Matias Sebastian |
