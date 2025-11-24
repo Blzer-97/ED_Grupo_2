@@ -11,9 +11,6 @@ import grupo2.mecanica_ed_02.Modelos.Servicio;
 import grupo2.mecanica_ed_02.Persistence.GestorDatosJSON;
 import java.util.List;
 
-/**
- * Tarea D3: CRUD de Servicios.
- */
 public class ServicioService {
 
     private final GestorDatosJSON gestorDatos;
@@ -64,19 +61,12 @@ La clase InventarioService administra la lógica de negocio relacionada con prod
 ```
 package grupo2.mecanica_ed_02.Service;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import grupo2.mecanica_ed_02.Modelos.MovimientoInventario;
 import grupo2.mecanica_ed_02.Modelos.Producto;
 import grupo2.mecanica_ed_02.Persistence.GestorDatosJSON;
-
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Tarea D2: Lógica de Inventario y Productos.
- * Gestiona el CRUD de productos y el registro de movimientos de stock.
- */
 public class InventarioService {
 
     private final GestorDatosJSON gestorDatos;
@@ -84,11 +74,9 @@ public class InventarioService {
     public InventarioService(GestorDatosJSON gestorDatos) {
         this.gestorDatos = gestorDatos;
     }
-
-    // --- Tarea 2.1: Lógica de Servicio de Inventario (CRUD) ---
-
+    
     public List<Producto> getProductos() {
-        return gestorDatos.leerProductos(); // Usa el método fachada
+        return gestorDatos.leerProductos();
     }
 
     public Producto findProductoBySku(String sku) {
@@ -100,8 +88,7 @@ public class InventarioService {
 
     public Producto registrarProducto(Producto producto) {
         List<Producto> productos = getProductos();
-        
-        // Validación de SKU duplicado
+
         if (findProductoBySku(producto.getSku()) != null) {
             throw new RuntimeException("Error: El SKU '" + producto.getSku() + "' ya existe.");
         }
@@ -117,7 +104,7 @@ public class InventarioService {
 
         for (int i = 0; i < productos.size(); i++) {
             if (productos.get(i).getSku().equalsIgnoreCase(productoActualizado.getSku())) {
-                productos.set(i, productoActualizado); // Reemplaza el producto
+                productos.set(i, productoActualizado);
                 encontrado = true;
                 break;
             }
@@ -142,12 +129,6 @@ public class InventarioService {
         gestorDatos.guardarProductos(productos);
     }
 
-    // --- Tarea 2.2: Lógica de Movimientos de Stock ---
-    
-    /**
-     * Registra un movimiento y actualiza el stock del producto.
-     * La cantidad puede ser positiva (ENTRADA) o negativa (SALIDA).
-     */
     public void registrarMovimiento(MovimientoInventario mov) {
         Producto producto = findProductoBySku(mov.getSkuProducto());
         if (producto == null) {
@@ -160,11 +141,9 @@ public class InventarioService {
             throw new RuntimeException("Stock insuficiente para " + producto.getNombre() + ". Stock actual: " + producto.getStock() + ", se intentó sacar: " + (-mov.getCantidad()));
         }
 
-        // 1. Actualizar el stock en el producto
         producto.setStock(nuevoStock);
-        actualizarProducto(producto); // Llama al método que guarda la lista de productos
+        actualizarProducto(producto);
 
-        // 2. Guardar el movimiento en el historial
         List<MovimientoInventario> movimientos = gestorDatos.leerMovimientos();
         movimientos.add(mov);
         gestorDatos.guardarMovimientos(movimientos);
@@ -195,9 +174,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Tarea D3: Lógica de Servicio de Venta.
- */
 public class VentaService {
 
     private final GestorDatosJSON gestorDatos;
@@ -210,11 +186,8 @@ public class VentaService {
         this.calculadoraVentas = calculadoraVentas;
     }
 
-    /**
-     * Registra una venta, calcula totales y descuenta el stock.
-     */
     public Venta registrarVenta(Venta venta) {
-        // 1. Asignar ID y Fecha si no existen
+
         if (venta.getId() == null) {
             venta.setId(UUID.randomUUID().toString());
         }
@@ -222,7 +195,6 @@ public class VentaService {
             venta.setFecha(new Date());
         }
 
-        // 2. Calcular totales (REQ. FUNCIONAL)
         double subtotal = calculadoraVentas.calcularSubtotal(venta.getItems());
         double igv = calculadoraVentas.calcularMontoIGV(subtotal);
         double total = calculadoraVentas.calcularTotal(subtotal, igv, venta.getDescuento());
@@ -233,10 +205,9 @@ public class VentaService {
         venta.setTotal(total);
         venta.setMargenGanancia(ganancia);
 
-        // 3. Descontar stock (REQ. FUNCIONAL)
         for (ItemVenta item : venta.getItems()) {
             if (item.isEsProducto()) {
-                // La cantidad debe ser negativa para una salida
+
                 int cantidadSalida = -item.getCantidad(); 
                 
                 MovimientoInventario mov = new MovimientoInventario(
@@ -247,17 +218,89 @@ public class VentaService {
                     "Venta ID: " + venta.getId()
                 );
                 
-                // inventarioService se encarga de validar stock y actualizar
                 inventarioService.registrarMovimiento(mov);
             }
         }
 
-        // 4. Guardar la Venta
         List<Venta> ventas = gestorDatos.leerVentas();
         ventas.add(venta);
         gestorDatos.guardarVentas(ventas);
 
         return venta;
+    }
+}
+```
+
+### Clase ReporteService
+La clase ReporteService centraliza la lógica de negocio necesaria para la generación de reportes financieros, actuando como el componente encargado de procesar los datos de las ventas almacenadas en el sistema.
+```
+package grupo2.mecanica_ed_02.Service;
+
+import grupo2.mecanica_ed_02.Modelos.Venta;
+import grupo2.mecanica_ed_02.Persistence.GestorDatosJSON;
+import java.util.List;
+
+
+public class ReporteService {
+
+    private final GestorDatosJSON gestorDatos;
+
+    public ReporteService(GestorDatosJSON gestorDatos) {
+        this.gestorDatos = gestorDatos;
+    }
+
+    public double calcularTotalVendido(List<Venta> ventas) {
+        return ventas.stream()
+                .mapToDouble(Venta::getTotal)
+                .sum();
+    }
+
+
+    public double calcularGananciaTotal(List<Venta> ventas) {
+        return ventas.stream()
+                .mapToDouble(Venta::getMargenGanancia)
+                .sum();
+    }
+}
+```
+
+### Clase ConfigService
+Mantiene en una memoria temporal o caché los datos que se usan todo el tiempo, como el valor del IGV o el símbolo de la moneda, para que el sistema no pierda tiempo leyéndolos del disco duro cada vez que los necesita.
+```
+package grupo2.mecanica_ed_02.Service;
+
+import grupo2.mecanica_ed_02.Modelos.Configuracion;
+import grupo2.mecanica_ed_02.Persistence.GestorDatosJSON;
+
+public class ConfigService {
+
+    private final GestorDatosJSON gestorDatos;
+    private Configuracion configuracionCache;
+
+    public ConfigService(GestorDatosJSON gestorDatos) {
+        this.gestorDatos = gestorDatos;
+
+        this.configuracionCache = gestorDatos.leerConfiguracion();
+    }
+
+    public Configuracion getConfiguracion() {
+
+        return this.configuracionCache;
+    }
+
+    public void guardarConfiguracion(Configuracion nuevaConfig) {
+        gestorDatos.guardarConfiguracion(nuevaConfig);
+
+        this.configuracionCache = nuevaConfig;
+        System.out.println("Configuración guardada y caché actualizada.");
+    }
+
+    public double getPorcentajeIGV() {
+        return this.configuracionCache.getPorcentajeIGV();
+    }
+
+    public String getSimboloMoneda() {
+        return this.configuracionCache.getSimboloMoneda();
     }
 }
 ```
