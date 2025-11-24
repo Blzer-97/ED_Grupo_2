@@ -11,4 +11,4 @@ Puede añadir tanto productos como servicios y editar su precio unitario.
 
 ### Reporte de Ganancia
 Se muestra las ganancias totales, así como los productos más vendidos.
-<img width="1038" height="616" alt="image" src="https://github.com/user-attachments/assets/0620b9e0-8336-448b-8e90-e7dab52361e1" />
+<img width="1598" height="978" alt="Screenshot 2025-11-24 005504" src="https://github.com/user-attachments/assets/7cd1f77c-142a-4538-9a5d-a540d8c74292" />
